@@ -1,0 +1,34 @@
+class Solution {
+    public boolean makeStringsEqual(String s, String target) {
+        
+        //case 1 when all 0's'
+        if(s.equals(target))
+        {
+            return true;
+
+        }
+        //s has both 0 and 1
+        boolean target_has_one=false;
+        for(int i=0;i<target.length();i++)
+        {
+            if((target.charAt(i)=='1')){
+                target_has_one=true;
+            }
+        }
+        boolean s_has_one=false;
+        if(target_has_one)
+        {    
+            for(int i=0;i<s.length();i++)
+            {
+                if(s.charAt(i)=='1')
+                {
+                    s_has_one=true;
+                }
+
+
+            }
+        }
+
+        return (target_has_one && s_has_one);
+    }
+}
